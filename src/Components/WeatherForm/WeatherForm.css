@@ -1,0 +1,32 @@
+input[type=text] {
+  border: 2px solid; 
+  padding: 0.8em;
+  font-size: 1em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  outline: none;
+}
+
+.zipFieldContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.submitWeather {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background-color: rgb(29, 29, 29); 
+  padding: 0.8em;
+  height: auto;
+  color: rgb(236, 236, 236);
+  user-select: none;
+}
+
+.radio {
+  margin: 10px 0;
+}
+
+.errorText {
+  color: red;
+}
