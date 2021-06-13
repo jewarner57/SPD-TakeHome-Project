@@ -9,9 +9,14 @@ function MoodForm(props) {
     <div className="MoodForm">
       <p className="moodFormTitle">How Are You Feeling?</p>
       {moodList.map((moodItem) => {
+        const moodSelected = (mood === moodItem ? 'moodSelected' : '')
+
         return <img
-          className={`moodIcon ${mood === moodItem ? 'moodSelected' : ''}`}
-          onClick={() => setMood(moodItem)}
+          className={`moodIcon ${moodSelected}`}
+          onClick={() => {
+            setMood(moodItem);
+            props.toggle()
+          }}
           alt={`${moodItem}`}
           src={process.env.PUBLIC_URL + `/moods/${moodItem}.svg`}
         />

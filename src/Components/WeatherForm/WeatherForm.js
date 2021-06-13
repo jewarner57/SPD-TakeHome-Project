@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import WeatherData from '../WeatherData/WeatherData';
 import MoodForm from '../MoodForm/MoodForm';
+import Modal from '../Modal/Modal';
 import './WeatherForm.css';
 
 class WeatherForm extends Component {
@@ -14,9 +15,11 @@ class WeatherForm extends Component {
       weatherData: {
         'cod': '0'
       },
+      modalIsVisible: false
     }
 
     this.handleRadioChange = this.handleRadioChange.bind(this)
+    this.toggleModal = this.toggleModal.bind(this)
     this.submit = this.submit.bind(this)
   }
 
@@ -24,6 +27,10 @@ class WeatherForm extends Component {
     this.setState({
       radioValue: event.target.value
     });
+  }
+
+  toggleModal() {
+    this.setState({ modalIsVisible: !this.state.modalIsVisible })
   }
 
   submit(e) {
@@ -86,7 +93,8 @@ class WeatherForm extends Component {
         {this.state.weatherData.cod === 200 ?
           <div className="weatherDisplay">
             <WeatherData weather={this.state.weatherData}></WeatherData>
-            <MoodForm></MoodForm>
+            <MoodForm toggle={this.toggleModal}></MoodForm>
+            {this.state.modalIsVisible ? <Modal toggle={this.toggleModal} ></Modal> : ''}
           </div>
           : ''}
       </div>
