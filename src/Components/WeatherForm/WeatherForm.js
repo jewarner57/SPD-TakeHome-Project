@@ -15,11 +15,13 @@ class WeatherForm extends Component {
       weatherData: {
         'cod': '0'
       },
-      modalIsVisible: false
+      modalIsVisible: false,
+      currentMood: ''
     }
 
     this.handleRadioChange = this.handleRadioChange.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
+    this.toggleMood = this.toggleMood.bind(this)
     this.submit = this.submit.bind(this)
   }
 
@@ -31,6 +33,10 @@ class WeatherForm extends Component {
 
   toggleModal() {
     this.setState({ modalIsVisible: !this.state.modalIsVisible })
+  }
+
+  toggleMood(mood) {
+    this.setState({ currentMood: mood })
   }
 
   submit(e) {
@@ -93,8 +99,8 @@ class WeatherForm extends Component {
         {this.state.weatherData.cod === 200 ?
           <div className="weatherDisplay">
             <WeatherData weather={this.state.weatherData}></WeatherData>
-            <MoodForm toggle={this.toggleModal}></MoodForm>
-            {this.state.modalIsVisible ? <Modal toggle={this.toggleModal} ></Modal> : ''}
+            <MoodForm toggle={this.toggleModal} setMood={this.toggleMood} mood={this.state.currentMood}></MoodForm>
+            {this.state.modalIsVisible ? <Modal toggle={this.toggleModal} mood={this.state.currentMood} icon={this.state.weatherData.weather[0].icon}></Modal> : ''}
           </div>
           : ''}
       </div>
