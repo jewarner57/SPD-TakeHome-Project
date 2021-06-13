@@ -1,7 +1,5 @@
 .WeatherData {
   margin-top: 20px;
-  animation-name: fadeIn;
-  animation-duration: 1s;
   border: 1px solid rgb(238, 238, 238);
   border-radius: 5px;
 }
@@ -24,9 +22,4 @@
 .temp {
   font-size: 3em;
   margin: 10px;
-}
-
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
 }

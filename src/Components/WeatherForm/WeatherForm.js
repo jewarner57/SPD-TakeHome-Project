@@ -84,7 +84,7 @@ class WeatherForm extends Component {
           </div>
         </form>
         {this.state.weatherData.cod === 200 ?
-          <div>
+          <div className="weatherDisplay">
             <WeatherData weather={this.state.weatherData}></WeatherData>
             <MoodForm></MoodForm>
           </div>

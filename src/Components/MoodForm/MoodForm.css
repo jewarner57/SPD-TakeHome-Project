@@ -1,0 +1,17 @@
+.MoodForm {
+  padding: 20px;
+  opacity: 80%;
+  max-width: 250px;
+}
+
+.moodFormTitle {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+}
+
+.moodIcon {
+  height: 70px;
+  width: 70px;
+  margin: 5px 5px;
+}
