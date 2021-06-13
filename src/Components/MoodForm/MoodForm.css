@@ -15,3 +15,7 @@
   width: 70px;
   margin: 5px 5px;
 }
+
+.moodSelected {
+  opacity: 50%;
+}

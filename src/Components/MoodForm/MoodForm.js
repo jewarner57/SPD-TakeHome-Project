@@ -8,8 +8,13 @@ function MoodForm(props) {
   return (
     <div className="MoodForm">
       <p className="moodFormTitle">How Are You Feeling?</p>
-      {moodList.map((mood) => {
-        return <img className="moodIcon" onClick={() => setMood(mood)} alt={`${mood}`} src={process.env.PUBLIC_URL + `/moods/${mood}.svg`} />
+      {moodList.map((moodItem) => {
+        return <img
+          className={`moodIcon ${mood === moodItem ? 'moodSelected' : ''}`}
+          onClick={() => setMood(moodItem)}
+          alt={`${moodItem}`}
+          src={process.env.PUBLIC_URL + `/moods/${moodItem}.svg`}
+        />
       })}
     </div>
   );
