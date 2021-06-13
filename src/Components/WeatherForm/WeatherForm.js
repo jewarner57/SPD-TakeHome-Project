@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import WeatherData from '../WeatherData/WeatherData';
+import MoodForm from '../MoodForm/MoodForm';
 import './WeatherForm.css';
 
 class WeatherForm extends Component {
@@ -82,7 +83,12 @@ class WeatherForm extends Component {
             </div>
           </div>
         </form>
-        {this.state.weatherData.cod === 200 ? <WeatherData weather={this.state.weatherData}></WeatherData> : ''}
+        {this.state.weatherData.cod === 200 ?
+          <div>
+            <WeatherData weather={this.state.weatherData}></WeatherData>
+            <MoodForm></MoodForm>
+          </div>
+          : ''}
       </div>
     );
   }
